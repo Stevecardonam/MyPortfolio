@@ -57,10 +57,10 @@ export function Header() {
               >
                 <Link
                   href={item.href}
-                  className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 font-medium relative group"
+                  className="text-gray-300 hover:text-teal-400 transition-colors duration-300 font-medium relative group"
                 >
                   {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-500 group-hover:w-full transition-all duration-300" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-400 to-emerald-500 group-hover:w-full transition-all duration-300" />
                 </Link>
               </motion.div>
             ))}
@@ -70,7 +70,7 @@ export function Header() {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden text-gray-300 hover:text-cyan-400"
+            className="md:hidden text-gray-300 hover:text-teal-400"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <AnimatePresence mode="wait">
@@ -119,7 +119,7 @@ export function Header() {
                   >
                     <Link
                       href={item.href}
-                      className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 font-medium block py-2"
+                      className="text-gray-300 hover:text-teal-400 transition-colors duration-300 font-medium block py-2"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {item.label}
