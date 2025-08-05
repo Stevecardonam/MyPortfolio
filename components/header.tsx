@@ -39,11 +39,9 @@ export function Header() {
           {/* Logo */}
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link href="/" className="flex items-center space-x-2 group">
-              <div className="w-10 h-10 bg-gradient-to-r from-teal-600 to-emerald-700 rounded-lg flex items-center justify-center">
-                <Zap className="h-6 w-6 text-white group-hover:animate-pulse" />
-              </div>
-              <span className="text-2xl font-black bg-gradient-to-r from-teal-300 to-emerald-500 bg-clip-text text-transparent">
-                Portfolio
+              
+              <span className="text-2xl font-bold bg-gradient-to-r from-teal-100 to-emerald-100 bg-clip-text text-transparent">
+                Steven´s Portfolio
               </span>
             </Link>
           </motion.div>

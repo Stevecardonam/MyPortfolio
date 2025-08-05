@@ -105,7 +105,7 @@ export function Contact() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-5xl md:text-6xl font-black mb-6">
+            <h2 className="text-5xl font-bold mb-12">
               <span className="bg-gradient-to-r from-teal-600 to-emerald-700 bg-clip-text text-transparent">
                 Let's Connect
               </span>

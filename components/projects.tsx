@@ -13,7 +13,7 @@ export function Projects() {
     {
       title: "Nivo Pos",
       description: "Nivo is a web-based point-of-sale (POS) application developed as Henry's final bootcamp project. Its goal is to facilitate comprehensive sales, product, inventory, and invoicing management for small and medium-sized businesses.",
-      image: "/Nivo app.png?height=400&width=600",
+      image: "/Nivo app.png",
       technologies: ["Nest.js", "TypeScript", "Next.js", "Node.js", "Stripe", "PostgreSQL"],
       liveUrl: "https://nivoapp.vercel.app/",
       githubUrl: "https://github.com/Stevecardonam",
@@ -23,7 +23,7 @@ export function Projects() {
     {
       title: "Catepsia",
       description:  "Designed and developed Catepsia's website from scratch, a mental health center focused on accessible care. I created a responsive, SEO-optimized site using semantic HTML, modern CSS, and interactive JavaScript. Improved navigation, performance, and usability, while collaborating remotely with the team to deliver effective solutions that enhanced their online presence and credibility.",
-      image: "/catepsia website.png?height=400&width=600",
+      image: "/catepsia website.png",
       technologies: ["HTML", "CSS", "Tailwind", "Javascript"],
       liveUrl: "https://www.catepsiapsicologos.com/",
       githubUrl: "https://github.com/Stevecardonam",
@@ -33,7 +33,7 @@ export function Projects() {
     {
       title: "Terapsy Core",
       description: "A secure and intuitive web application designed specifically for psychologists and mental health professionals in the healthcare sector. The platform allows clinicians to efficiently manage patient records, appointments, patients and therapy session histories in a centralized system.",
-      image: "/Terapsy website.png?height=400&width=600",
+      image: "/Terapsy website.png",
       technologies: ["Nest.js", "Node.js", "TypeScript", "Prisma", "Next.js", "React", "Tailwind", "PostgreSQL"],
       liveUrl: "https://terapsy-core.vercel.app/",
       githubUrl: "https://github.com/Stevecardonam",
@@ -46,7 +46,7 @@ export function Projects() {
   const otherProjects = projects.filter((project) => !project.featured)
 
   return (
-    <section id="projects" className="py-24 relative overflow-hidden">
+    <section id="projects" className="py-8 relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 tech-grid opacity-5" />
 
@@ -60,7 +60,7 @@ export function Projects() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-5xl md:text-6xl font-black mb-6">
+            <h2 className="text-5xl font-bold mb-12">
               <span className="bg-gradient-to-r from-teal-600 to-emerald-700 bg-clip-text text-transparent">
                 Featured Projects
               </span>

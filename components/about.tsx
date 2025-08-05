@@ -33,30 +33,6 @@ export function About() {
   ];
 
   const services = [
-    // {
-    //   icon: <Code className="h-8 w-8" />,
-    //   title: "Frontend Mastery",
-    //   description: "Creating immersive user interfaces with cutting-edge frameworks and interactive animations.",
-    //   gradient: "from-cyan-400 to-blue-500",
-    // },
-    // {
-    //   icon: <Database className="h-8 w-8" />,
-    //   title: "Backend Architecture",
-    //   description: "Building scalable, high-performance server solutions with modern cloud technologies.",
-    //   gradient: "from-purple-400 to-pink-500",
-    // },
-    // {
-    //   icon: <Brain className="h-8 w-8" />,
-    //   title: "AI Integration",
-    //   description: "Implementing machine learning and AI solutions to create intelligent applications.",
-    //   gradient: "from-green-400 to-cyan-500",
-    // },
-    // {
-    //   icon: <Rocket className="h-8 w-8" />,
-    //   title: "Innovation Lab",
-    //   description: "Exploring emerging technologies like Web3, AR/VR, and IoT for next-gen solutions.",
-    //   gradient: "from-orange-400 to-red-500",
-    // },
     {
       icon: <Code className="h-8 w-8 text-white" />,
       title: "Full Stack Web Development",
@@ -124,7 +100,7 @@ export function About() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-5xl md:text-6xl font-black mb-6">
+            <h2 className="text-5xl font-bold mb-12">
               <span className="bg-gradient-to-r from-teal-600 to-emerald-700 bg-clip-text text-transparent">
                 About Me
               </span>
@@ -185,7 +161,7 @@ export function About() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h3 className="text-3xl font-bold mb-12">
+            <h3 className="text-5xl font-bold mb-12">
               <span className="bg-gradient-to-r from-teal-600 to-emerald-700 bg-clip-text text-transparent">
                 Tech Arsenal
               </span>

@@ -48,7 +48,7 @@ export function Loader({ children }: LoaderProps) {
             initial={{ opacity: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-slate-900 via-emerald-900 to-slate-900 overflow-hidden"
           >
             {/* Fondo animado */}
             <div className="absolute inset-0 opacity-20">
@@ -60,7 +60,7 @@ export function Loader({ children }: LoaderProps) {
               {[...Array(20)].map((_, i) => (
                 <motion.div
                   key={i}
-                  className="absolute w-1 h-1 bg-cyan-400 rounded-full"
+                  className="absolute w-1 h-1 bg-teal-400 rounded-full"
                   initial={{
                     x: Math.random() * windowSize.width,
                     y: Math.random() * windowSize.height,
@@ -83,24 +83,24 @@ export function Loader({ children }: LoaderProps) {
               {/* Anillo exterior */}
               <div className="relative mb-8">
                 <motion.div
-                  className="w-32 h-32 border-2 border-transparent border-t-cyan-400 border-r-purple-400 rounded-full mx-auto"
+                  className="w-32 h-32 border-2 border-transparent border-teal-400 border-r-emerald-400 rounded-full mx-auto"
                   animate={{ rotate: 360 }}
                   transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
                 />
                 <motion.div
-                  className="absolute top-2 left-2 w-28 h-28 border-2 border-transparent border-b-pink-400 border-l-blue-400 rounded-full"
+                  className="absolute top-2 left-2 w-28 h-28 border-2 border-transparent border-b-teal-400 border-l-blue-400 rounded-full"
                   animate={{ rotate: -360 }}
                   transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
                 />
                 <motion.div
-                  className="absolute top-1/2 left-1/2 w-4 h-4 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full transform -translate-x-1/2 -translate-y-1/2"
+                  className="absolute top-1/2 left-1/2 w-4 h-4 bg-gradient-to-r from-teal-400 to-emerald-400 rounded-full transform -translate-x-1/2 -translate-y-1/2"
                   animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
                   transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY }}
                 />
                 {[...Array(3)].map((_, i) => (
                   <motion.div
                     key={i}
-                    className="absolute w-2 h-2 bg-gradient-to-r from-pink-400 to-cyan-400 rounded-full"
+                    className="absolute w-2 h-2 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full"
                     style={{ top: "50%", left: "50%", transformOrigin: "0 0" }}
                     animate={{
                       rotate: 360,
@@ -129,12 +129,12 @@ export function Loader({ children }: LoaderProps) {
                     initial={{ width: 0 }}
                     animate={{ width: "auto" }}
                     transition={{ duration: 1, delay: 1 }}
-                    className="inline-block overflow-hidden whitespace-nowrap border-r-2 border-cyan-400"
+                    className="inline-block overflow-hidden whitespace-nowrap border-r-2 border-teal-400"
                   >
                     Loading Portfolio
                   </motion.span>
                 </h2>
-                <p className="text-cyan-300 text-sm">Ready to see something amazing...</p>
+                <p className="text-teal-300 text-sm">Ready to see something amazing...</p>
               </motion.div>
 
               {/* Barra de progreso */}
@@ -145,7 +145,7 @@ export function Loader({ children }: LoaderProps) {
                 </div>
                 <div className="w-full bg-gray-700 rounded-full h-1 overflow-hidden">
                   <motion.div
-                    className="h-full bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 rounded-full relative"
+                    className="h-full bg-gradient-to-r from-teal-400 via-emerald-400 to-teal-400 rounded-full relative"
                     initial={{ width: 0 }}
                     animate={{ width: `${progress}%` }}
                     transition={{ duration: 0.3 }}
@@ -178,17 +178,17 @@ export function Loader({ children }: LoaderProps) {
               </motion.div>
 
               {/* Elementos decorativos */}
-              <div className="absolute -top-10 -left-10 w-20 h-20 border border-cyan-400/30 rounded-lg">
+              <div className="absolute -top-10 -left-10 w-20 h-20 border border-teal-400/30 rounded-lg">
                 <motion.div
-                  className="w-full h-full border border-purple-400/50 rounded-lg"
+                  className="w-full h-full border border-emerald-400/50 rounded-lg"
                   animate={{ rotate: [0, 90, 180, 270, 360] }}
                   transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
                 />
               </div>
 
-              <div className="absolute -bottom-10 -right-10 w-16 h-16 border border-pink-400/30 rounded-full">
+              <div className="absolute -bottom-10 -right-10 w-16 h-16 border border-teal-400/30 rounded-full">
                 <motion.div
-                  className="w-full h-full border-2 border-cyan-400/50 rounded-full"
+                  className="w-full h-full border-2 border-teal-400/50 rounded-full"
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
                 />
@@ -201,7 +201,7 @@ export function Loader({ children }: LoaderProps) {
                 {[...Array(3)].map((_, i) => (
                   <motion.div
                     key={i}
-                    className="w-2 h-2 bg-cyan-400 rounded-full"
+                    className="w-2 h-2 bg-teal-400 rounded-full"
                     animate={{ opacity: [0.3, 1, 0.3] }}
                     transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY, delay: i * 0.2 }}
                   />

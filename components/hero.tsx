@@ -60,7 +60,7 @@ export function Hero() {
             className="mb-6"
           >
             <h1 className="text-6xl md:text-8xl font-black mb-4 relative">
-              <span className="bg-gradient-to-r from-teal-200 to-emerald-300 bg-clip-text text-transparent neon-text">
+              <span className="bg-gradient-to-r from-teal-100 to-emerald-100 bg-clip-text text-transparent neon-text">
                 Steven Cardona
               </span>
               <motion.span
@@ -94,7 +94,7 @@ export function Hero() {
                   ease: "linear",
                 }}
               />
-              <h2 className="text-2xl md:text-4xl font-bold text-white relative z-10">
+              <h2 className="text-2xl md:text-4xl font-bold text-gray-400 relative z-10">
                 <motion.span
                   animate={{
                     color: ["#14b8a6", "#10b981", "#0d9488", "#14b8a6"],
@@ -232,7 +232,7 @@ export function Hero() {
       {/* Corner tech elements */}
       <div className="absolute top-8 left-8">
         <motion.div
-          className="w-16 h-16 border-2 border-cyan-400/30 rounded-lg relative"
+          className="w-16 h-16 border-2 border-emerald-100/30 rounded-lg relative"
           animate={{ rotate: [0, 90, 180, 270, 360] }}
           transition={{
             duration: 20,
@@ -240,17 +240,17 @@ export function Hero() {
             ease: "linear",
           }}
         >
-          <div className="absolute inset-2 border border-purple-100/50 rounded-md" />
+          <div className="absolute inset-2 border border-teal-100/50 rounded-md" />
         </motion.div>
       </div>
 
       <div className="absolute bottom-8 right-8">
         <motion.div
-          className="w-12 h-12 border-2 border-pink-100/30 rounded-full relative"
+          className="w-12 h-12 border-2 border-emerald-100/30 rounded-full relative"
           animate={{ scale: [1, 1.2, 1] }}
           transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
         >
-          <div className="absolute inset-1 border border-cyan-400/50 rounded-full" />
+          <div className="absolute inset-1 border border-teal-100/50 rounded-full" />
         </motion.div>
       </div>
     </section>

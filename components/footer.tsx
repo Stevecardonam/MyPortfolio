@@ -135,9 +135,7 @@ export function Footer() {
               className="border-t border-gray-700/50 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
             >
               <p className="text-gray-400 flex items-center mb-4 md:mb-0">
-                Made with{" "}
-                <Heart className="h-4 w-4 mx-2 text-red-500 animate-pulse" />
-                and cutting-edge tech © 2025 Steven Cardona
+                © 2025 Steven Cardona All rights reserved
               </p>
 
               <Button
