@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Menu, X, Zap } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { motion, AnimatePresence } from "framer-motion"
 
@@ -31,23 +31,13 @@ export function Header() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "glass-dark border-b border-gray-700/50" : "bg-transparent"
+        scrolled ? "header-scrolled border-b border-white/10" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
-          {/* Logo */}
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Link href="/" className="flex items-center space-x-2 group">
-              
-              <span className="text-2xl font-bold bg-gradient-to-r from-teal-100 to-emerald-100 bg-clip-text text-transparent">
-                Steven´s Portfolio
-              </span>
-            </Link>
-          </motion.div>
-
+        <div className="relative flex items-center justify-center py-5">
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item, index) => (
               <motion.div
                 key={item.href}
@@ -57,10 +47,18 @@ export function Header() {
               >
                 <Link
                   href={item.href}
-                  className="text-gray-300 hover:text-teal-400 transition-colors duration-300 font-medium relative group"
+                  className={`group relative text-sm font-medium transition-colors duration-200 ${
+                    scrolled
+                      ? "text-white hover:text-emerald-100"
+                      : "text-gray-500 hover:text-[#315947]"
+                  }`}
                 >
                   {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-400 to-emerald-500 group-hover:w-full transition-all duration-300" />
+                  <span
+                    className={`absolute -bottom-1.5 left-0 h-px w-0 transition-all duration-200 group-hover:w-full ${
+                      scrolled ? "bg-white/70" : "bg-[#527965]"
+                    }`}
+                  />
                 </Link>
               </motion.div>
             ))}
@@ -70,8 +68,14 @@ export function Header() {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden text-gray-300 hover:text-teal-400"
+            className={`absolute right-0 md:hidden ${
+              scrolled
+                ? "text-white hover:bg-white/10 hover:text-emerald-100"
+                : "text-gray-500 hover:bg-[#eef2ef] hover:text-[#315947]"
+            }`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isMenuOpen}
           >
             <AnimatePresence mode="wait">
               {isMenuOpen ? (
@@ -107,7 +111,9 @@ export function Header() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden py-4 border-t border-gray-700/50"
+              className={`border-t py-4 md:hidden ${
+                scrolled ? "border-white/15" : "border-gray-200"
+              }`}
             >
               <div className="flex flex-col space-y-4">
                 {navItems.map((item, index) => (
@@ -119,7 +125,11 @@ export function Header() {
                   >
                     <Link
                       href={item.href}
-                      className="text-gray-300 hover:text-teal-400 transition-colors duration-300 font-medium block py-2"
+                      className={`block py-2 font-medium transition-colors duration-200 ${
+                        scrolled
+                          ? "text-white hover:text-emerald-100"
+                          : "text-gray-500 hover:text-[#315947]"
+                      }`}
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {item.label}

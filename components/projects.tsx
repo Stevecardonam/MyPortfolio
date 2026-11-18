@@ -3,7 +3,14 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ExternalLink, Github, Star, Eye } from "lucide-react"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+import { ExternalLink, Github } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
@@ -18,35 +25,49 @@ export function Projects() {
       liveUrl: "https://nivoapp.vercel.app/",
       githubUrl: "https://github.com/Stevecardonam",
       featured: false,
-      stats: { stars: 156, views: "6.2k" },
     },
     {
-      title: "Catepsia",
-      description:  "Designed and developed Catepsia's website from scratch, a mental health center focused on accessible care. I created a responsive, SEO-optimized site using semantic HTML, modern CSS, and interactive JavaScript. Improved navigation, performance, and usability, while collaborating remotely with the team to deliver effective solutions that enhanced their online presence and credibility.",
-      image: "/catepsia website.png",
-      technologies: ["HTML", "CSS", "Tailwind", "Javascript"],
-      liveUrl: "https://www.catepsiapsicologos.com/",
+      title: "Atawall",
+      description:  "Atawall is an AI-powered marketplace designed to transform the way people buy and sell online. Instead of creating product listings and browsing through endless catalogs, users simply describe what they want to sell or purchase, while the platform’s intelligent matching system automatically connects buyers and sellers.",
+      image: "/atawall.png",
+      technologies: ["Nest.js", "Node.js", "TypeScript", "Prisma", "Next.js", "React", "React Native", "Tailwind", "PostgreSQL"],
+      liveUrl: "https://atawall.onrender.com/",
       githubUrl: "https://github.com/Stevecardonam",
       featured: false,
-      stats: { stars: 298, views: "15.3k" },
     },
     {
       title: "Terapsy Core",
       description: "A secure and intuitive web application designed specifically for psychologists and mental health professionals in the healthcare sector. The platform allows clinicians to efficiently manage patient records, appointments, patients and therapy session histories in a centralized system.",
       image: "/Terapsy website.png",
       technologies: ["Nest.js", "Node.js", "TypeScript", "Prisma", "Next.js", "React", "Tailwind", "PostgreSQL"],
-      liveUrl: "https://terapsy-core.vercel.app/",
+      liveUrl: "https://terapsycore.com/",
       githubUrl: "https://github.com/Stevecardonam",
       featured: false,
-      stats: { stars: 445, views: "22.1k" },
+    },
+    {
+      title: "Fabriconnect",
+      description: "FabriConnect is a digital platform designed to connect clothing brands and textile manufacturers within a single ecosystem. The application streamlines collaboration between businesses and production workshops by providing professional profiles, supplier discovery tools, and direct communication channels.",
+      image: "/fabriconnect2.png",
+      technologies: ["Nest.js", "Node.js", "TypeScript", "Prisma", "Next.js", "React", "Tailwind", "PostgreSQL"],
+      liveUrl: "https://www.fabriconnect.com.ar/",
+      githubUrl: "https://github.com/Stevecardonam",
+      featured: false,
+    },
+    {
+      title: "Terapsy Clinic",
+      description: "Terapsy Clinic is a digital mental health platform that connects patients with licensed psychologists through an accessible and user-friendly experience. The website allows users to explore therapist profiles, learn about different therapeutic approaches, and book online appointments, making psychological care more accessible from anywhere.",
+      image: "/terapsyClinic.png",
+      technologies: ["Nest.js", "Node.js", "TypeScript", "Prisma", "Next.js", "React", "Tailwind", "PostgreSQL"],
+      liveUrl: "https://www.terapsyclinic.com/",
+      githubUrl: "https://github.com/Stevecardonam",
+      featured: false,
     },
   ]
 
-  const featuredProjects = projects.filter((project) => project.featured)
   const otherProjects = projects.filter((project) => !project.featured)
 
   return (
-    <section id="projects" className="py-8 relative overflow-hidden">
+    <section id="projects" className="relative overflow-hidden py-24">
       {/* Background effects */}
       <div className="absolute inset-0 tech-grid opacity-5" />
 
@@ -58,15 +79,13 @@ export function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-20"
+            className="mb-14 text-center"
           >
-            <h2 className="text-5xl font-bold mb-12">
-              <span className="bg-gradient-to-r from-teal-600 to-emerald-700 bg-clip-text text-transparent">
-                Featured Projects
-              </span>
+            <h2 className="mb-8 text-4xl font-semibold tracking-tight text-[#1d2923] md:text-5xl">
+              Selected Projects
             </h2>
-            <div className="glass-dark rounded-2xl p-8 max-w-4xl mx-auto">
-              <p className="text-xl text-gray-300 leading-relaxed">
+            <div className="glass-dark mx-auto max-w-4xl rounded-2xl p-8">
+              <p className="text-lg leading-relaxed text-gray-300">
                 Explore my latest innovations where cutting-edge technology meets creative problem-solving. Each project
                 represents a journey into the future of digital experiences.
               </p>
@@ -77,90 +96,94 @@ export function Projects() {
 
           {/* Other Projects */}
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <Carousel opts={{ align: "start", loop: true }} className="w-full">
+            <CarouselContent>
             {otherProjects.map((project, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5, scale: 1.02 }}
-                className="group"
-              >
-                <Card className="glass-dark border-gray-700/50 overflow-hidden hover:border-purple-400/50 transition-all duration-300 h-full">
-                  <div className="relative overflow-hidden">
-                    <Image
-                      src={project.image || "/placeholder.svg"}
-                      alt={project.title}
-                      width={400}
-                      height={300}
-                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-
-                    {/* Mini stats */}
-                    <div className="absolute top-3 right-3 flex space-x-1">
-                      <div className="glass rounded-full px-2 py-1 flex items-center space-x-1 text-xs text-white">
-                        <Star className="h-2 w-2 text-yellow-400" />
-                        <span>{project.stats.stars}</span>
-                      </div>
+              <CarouselItem key={project.title} className="flex sm:basis-1/2 lg:basis-1/3">
+                <motion.div
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.08 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -4 }}
+                  className="group flex w-full"
+                >
+                  <Card className="glass-dark h-full w-full overflow-hidden rounded-xl border-gray-200 transition-colors duration-200">
+                    <div className="relative aspect-[4/3] overflow-hidden bg-[#eef2ef]">
+                      <Image
+                        src={project.image || "/placeholder.svg"}
+                        alt={project.title}
+                        width={400}
+                        height={300}
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      />
                     </div>
-                  </div>
 
-                  <CardHeader className="pb-2">
-                    <CardTitle className="text-lg flex items-center justify-between text-white">
-                      {project.title}
-                      <div className="flex space-x-1">
-                        <Button
-                          variant="ghost"
-                          size="icon"
-                          className="h-8 w-8 text-gray-400 hover:text-cyan-400"
-                          asChild
-                        >
-                          <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                            <Github className="h-4 w-4" />
-                          </Link>
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          size="icon"
-                          className="h-8 w-8 text-gray-400 hover:text-purple-400"
-                          asChild
-                        >
-                          <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                            <ExternalLink className="h-4 w-4" />
-                          </Link>
-                        </Button>
+                    <CardHeader className="pb-3">
+                      <CardTitle className="flex items-center justify-between text-lg font-semibold text-white">
+                        {project.title}
+                        <div className="flex space-x-1">
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="h-8 w-8 text-gray-500 hover:bg-[#eef3ef] hover:text-[#315947]"
+                            asChild
+                          >
+                            <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                              <span className="sr-only">View {project.title} on GitHub</span>
+                              <Github className="h-4 w-4" />
+                            </Link>
+                          </Button>
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="h-8 w-8 text-gray-500 hover:bg-[#eef3ef] hover:text-[#315947]"
+                            asChild
+                          >
+                            <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                              <span className="sr-only">Visit {project.title}</span>
+                              <ExternalLink className="h-4 w-4" />
+                            </Link>
+                          </Button>
+                        </div>
+                      </CardTitle>
+                      <CardDescription className="text-sm leading-relaxed text-gray-400">
+                        {project.description}
+                      </CardDescription>
+                    </CardHeader>
+
+                    <CardContent className="pt-0">
+                      <div className="flex flex-wrap gap-1">
+                        {project.technologies.slice(0, 3).map((tech, techIndex) => (
+                          <Badge
+                            key={techIndex}
+                            variant="outline"
+                            className="rounded-full border-gray-200 bg-[#f7f9f7] text-xs text-gray-300 transition-colors hover:border-[#afc2b4]"
+                          >
+                            {tech}
+                          </Badge>
+                        ))}
+                        {project.technologies.length > 3 && (
+                          <Badge variant="outline" className="rounded-full border-gray-200 bg-[#f7f9f7] text-xs text-gray-300">
+                            +{project.technologies.length - 3}
+                          </Badge>
+                        )}
                       </div>
-                    </CardTitle>
-                    <CardDescription className="text-gray-400 text-sm leading-relaxed">
-                      {project.description}
-                    </CardDescription>
-                  </CardHeader>
-
-                  <CardContent className="pt-0">
-                    <div className="flex flex-wrap gap-1">
-                      {project.technologies.slice(0, 3).map((tech, techIndex) => (
-                        <Badge
-                          key={techIndex}
-                          variant="outline"
-                          className="glass border-gray-600/50 text-gray-300 text-xs hover:border-cyan-400/50 transition-colors duration-300"
-                        >
-                          {tech}
-                        </Badge>
-                      ))}
-                      {project.technologies.length > 3 && (
-                        <Badge variant="outline" className="glass border-gray-600/50 text-gray-300 text-xs">
-                          +{project.technologies.length - 3}
-                        </Badge>
-                      )}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              </CarouselItem>
             ))}
-          </div>
+            </CarouselContent>
+            <CarouselPrevious
+              aria-label="Previous projects"
+              className="left-2 top-32 z-20 h-11 w-11 -translate-y-1/2 rounded-full border border-white/80 bg-white/95 text-[#315947] shadow-lg backdrop-blur transition hover:scale-105 hover:bg-white md:left-3"
+            />
+            <CarouselNext
+              aria-label="Next projects"
+              className="right-2 top-32 z-20 h-11 w-11 -translate-y-1/2 rounded-full border border-white/80 bg-white/95 text-[#315947] shadow-lg backdrop-blur transition hover:scale-105 hover:bg-white md:right-3"
+            />
+          </Carousel>
         </div>
       </div>
     </section>

@@ -20,7 +20,6 @@ import {
   Phone,
   Send,
   MessageCircle,
-  Calendar,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -72,26 +71,23 @@ export function Contact() {
       title: "Email",
       value: "steve.cardm@gmail.com",
       description: "Drop me a line anytime",
-      gradient: "from-cyan-400 to-green-500",
     },
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Phone",
       value: "+57 (304) 584-8541",
       description: "Let's have a conversation",
-      gradient: "from-teal-400 to-emerald-500",
     },
     {
       icon: <MapPin className="h-6 w-6" />,
       title: "Location",
       value: "Medellín, Colombia",
       description: "Available for remote work",
-      gradient: "from-green-400 to-cyan-500",
     },
   ];
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
+    <section id="contact"     className="relative overflow-hidden py-24">
       {/* Background effects */}
       <div className="absolute inset-0 tech-grid opacity-5" />
 
@@ -103,15 +99,13 @@ export function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-20"
+            className="mb-14 text-center"
           >
-            <h2 className="text-5xl font-bold mb-12">
-              <span className="bg-gradient-to-r from-teal-600 to-emerald-700 bg-clip-text text-transparent">
-                Let's Connect
-              </span>
+            <h2 className="mb-8 text-4xl font-semibold tracking-tight text-[#1d2923] md:text-5xl">
+              Let&apos;s Connect
             </h2>
-            <div className="glass-dark rounded-2xl p-8 max-w-4xl mx-auto">
-              <p className="text-xl text-gray-300 leading-relaxed">
+            <div className="glass-dark mx-auto max-w-4xl rounded-2xl p-8">
+              <p className="text-lg leading-relaxed text-gray-300">
                 Ready to bring your next big idea to life? I'm always excited to
                 collaborate on innovative projects and explore new technological
                 frontiers together.
@@ -119,28 +113,26 @@ export function Contact() {
             </div>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-16">
+          <div className="grid gap-8 lg:grid-cols-2">
             {/* Contact Information */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="space-y-8"
+              className="space-y-6"
             >
-              <div className="glass-dark rounded-3xl p-8">
-                <h3 className="text-3xl font-bold mb-8">
-                  <span className="bg-gradient-to-r from-teal-600 to-emerald-700 bg-clip-text text-transparent">
-                    Get In Touch
-                  </span>
+              <div className="glass-dark rounded-2xl p-7 md:p-8">
+                <h3 className="mb-4 text-2xl font-semibold tracking-tight text-[#1d2923]">
+                  Get in touch
                 </h3>
-                <p className="text-gray-300 mb-8 leading-relaxed">
+                <p className="mb-7 leading-relaxed text-gray-300">
                   Whether you have a groundbreaking project idea, want to
                   discuss the latest in tech, or just want to connect with a
                   fellow innovator, I'd love to hear from you.
                 </p>
 
-                <div className="space-y-6">
+                <div className="space-y-3">
                   {contactMethods.map((method, index) => (
                     <motion.div
                       key={index}
@@ -148,17 +140,17 @@ export function Contact() {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: index * 0.1 }}
                       viewport={{ once: true }}
-                      whileHover={{ x: 10 }}
+                      whileHover={{ x: 3 }}
                       className="group"
                     >
-                      <div className="flex items-center space-x-4 p-4 glass rounded-xl hover:border-cyan-400/50 transition-all duration-300">
+                      <div className="flex items-center space-x-4 rounded-xl border border-transparent p-3 transition-colors duration-200 hover:border-[#e6ebe7] hover:bg-[#f8faf8]">
                         <div
-                          className={`flex-shrink-0 p-3 rounded-lg bg-gradient-to-r ${method.gradient} text-white`}
+                          className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-[#edf3ef] text-[#527965]"
                         >
                           {method.icon}
                         </div>
                         <div>
-                          <p className="font-semibold text-white group-hover:text-cyan-400 transition-colors">
+                          <p className="font-medium text-white">
                             {method.title}
                           </p>
                           <p className="text-gray-300 font-medium">
@@ -174,15 +166,15 @@ export function Contact() {
                 </div>
 
                 {/* Quick action buttons */}
-                <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                <div className="mt-6 flex flex-col gap-4 sm:flex-row">
                   <a
                     href="https://wa.me/573045848541?text=Hola%2C%20vi%20tu%20portafolio%20y%20me%20gustaría%20hablar%20contigo"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Button className="bg-gradient-to-r from-teal-600 to-emerald-700 hover:from-teal-700 hover:to-emerald-800 text-white font-semibold rounded-xl group">
-                      <MessageCircle className="mr-2 h-4 w-4 group-hover:animate-pulse" />
-                      Start a Conversation
+                    <Button className="group rounded-lg bg-[#315947] font-medium text-white hover:bg-[#274735]">
+                      <MessageCircle className="mr-2 h-4 w-4" />
+                      Start a conversation
                     </Button>
                   </a>
                   
@@ -197,9 +189,9 @@ export function Contact() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <Card className="glass-dark border-gray-700/50 hover:border-cyan-400/50 transition-all duration-300">
-                <CardHeader className="pb-6">
-                  <CardTitle className="text-2xl text-white">
+              <Card className="glass-dark rounded-2xl border-gray-200">
+                <CardHeader className="pb-5">
+                  <CardTitle className="text-xl font-semibold text-white">
                     Send a Message
                   </CardTitle>
                   <CardDescription className="text-gray-400">
@@ -208,8 +200,8 @@ export function Contact() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                       <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -217,7 +209,7 @@ export function Contact() {
                         viewport={{ once: true }}
                         className="space-y-2"
                       >
-                        <Label htmlFor="name" className="text-gray-300">
+                        <Label htmlFor="name"                         className="text-sm font-medium text-gray-300">
                           Name
                         </Label>
                         <Input
@@ -226,7 +218,7 @@ export function Contact() {
                           value={formData.name}
                           onChange={handleChange}
                           placeholder="Your name"
-                          className="glass border-gray-600/50 text-white placeholder-gray-500 focus:border-cyan-400/50 transition-colors"
+                          className="border-gray-200 bg-white text-[#1d2923] placeholder:text-gray-500 focus-visible:border-[#789782] focus-visible:ring-[#789782]/20"
                           required
                         />
                       </motion.div>
@@ -237,7 +229,7 @@ export function Contact() {
                         viewport={{ once: true }}
                         className="space-y-2"
                       >
-                        <Label htmlFor="email" className="text-gray-300">
+                        <Label htmlFor="email"                         className="text-sm font-medium text-gray-300">
                           Email
                         </Label>
                         <Input
@@ -247,7 +239,7 @@ export function Contact() {
                           value={formData.email}
                           onChange={handleChange}
                           placeholder="your.email@example.com"
-                          className="glass border-gray-600/50 text-white placeholder-gray-500 focus:border-cyan-400/50 transition-colors"
+                          className="border-gray-200 bg-white text-[#1d2923] placeholder:text-gray-500 focus-visible:border-[#789782] focus-visible:ring-[#789782]/20"
                           required
                         />
                       </motion.div>
@@ -260,7 +252,7 @@ export function Contact() {
                       viewport={{ once: true }}
                       className="space-y-2"
                     >
-                      <Label htmlFor="subject" className="text-gray-300">
+                      <Label htmlFor="subject" className="text-sm font-medium text-gray-300">
                         Subject
                       </Label>
                       <Input
@@ -269,7 +261,7 @@ export function Contact() {
                         value={formData.subject}
                         onChange={handleChange}
                         placeholder="What's this about?"
-                        className="glass border-gray-600/50 text-white placeholder-gray-500 focus:border-cyan-400/50 transition-colors"
+                        className="border-gray-200 bg-white text-[#1d2923] placeholder:text-gray-500 focus-visible:border-[#789782] focus-visible:ring-[#789782]/20"
                         required
                       />
                     </motion.div>
@@ -281,7 +273,7 @@ export function Contact() {
                       viewport={{ once: true }}
                       className="space-y-2"
                     >
-                      <Label htmlFor="message" className="text-gray-300">
+                      <Label htmlFor="message" className="text-sm font-medium text-gray-300">
                         Message
                       </Label>
                       <Textarea
@@ -291,7 +283,7 @@ export function Contact() {
                         onChange={handleChange}
                         placeholder="Tell me about your project or just say hello..."
                         rows={6}
-                        className="glass border-gray-600/50 text-white placeholder-gray-500 focus:border-cyan-400/50 transition-colors resize-none"
+                        className="resize-none border-gray-200 bg-white text-[#1d2923] placeholder:text-gray-500 focus-visible:border-[#789782] focus-visible:ring-[#789782]/20"
                         required
                       />
                     </motion.div>
@@ -304,10 +296,10 @@ export function Contact() {
                     >
                       <Button
                         type="submit"
-                        className="w-full bg-gradient-to-r from-teal-600 to-emerald-700 hover:from-teal-700 hover:to-emerald-800 text-white font-semibold py-3 rounded-xl transition-all duration-300 group"
+                        className="w-full rounded-lg bg-[#315947] py-3 font-medium text-white transition-colors hover:bg-[#274735]"
                       >
-                        <Send className="mr-2 h-4 w-4 group-hover:animate-pulse" />
-                        Send Message
+                        <Send className="mr-2 h-4 w-4" />
+                        Send message
                       </Button>
                     </motion.div>
                   </form>
