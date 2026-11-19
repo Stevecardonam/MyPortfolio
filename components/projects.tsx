@@ -56,7 +56,7 @@ export function Projects() {
     {
       title: "Terapsy Clinic",
       description: "Terapsy Clinic is a digital mental health platform that connects patients with licensed psychologists through an accessible and user-friendly experience. The website allows users to explore therapist profiles, learn about different therapeutic approaches, and book online appointments, making psychological care more accessible from anywhere.",
-      image: "/terapsyClinic.png",
+      image: "/TerapsyClinic.png",
       technologies: ["Nest.js", "Node.js", "TypeScript", "Prisma", "Next.js", "React", "Tailwind", "PostgreSQL"],
       liveUrl: "https://www.terapsyclinic.com/",
       githubUrl: "https://github.com/Stevecardonam",
